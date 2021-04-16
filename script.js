@@ -64,8 +64,9 @@ function nextSong() {
 }
 
 function updateProgress(e) {
-  console.log(e.srcElement.currentTime)
-  console.log(e.srcElement.duration)
+  const {duration, currentTime}=e.srcElement
+  const progressPrecent = (currentTime / duration) * 100
+  progress.style.width = `${progressPrecent}%`
 }
 
 // Event listeners
